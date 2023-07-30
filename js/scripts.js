@@ -78,7 +78,7 @@ miBoton.onclick = handleClick;
 function togglePasswordVisibility() {
     const passwordInput = document.getElementById('password');
     const showPasswordButton = document.getElementById('showPasswordButton');
-    
+
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
         showPasswordButton.innerText = 'Ocultar contraseña';
@@ -86,4 +86,11 @@ function togglePasswordVisibility() {
         passwordInput.type = 'password';
         showPasswordButton.innerText = 'Mostrar contraseña';
     }
+}
+function mostrarAlertita() {
+    document.getElementById("ventanaAlerta").style.display = "block";
+}
+
+function cerrarAlertita() {
+    document.getElementById("ventanaAlerta").style.display = "none";
 }

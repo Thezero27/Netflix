@@ -49,7 +49,8 @@
                 <br><br><br>
                 <div>
                     <p class="register-text">¿Primera vez en Netflix? <a href="#registro">Suscríbete ahora</a>.</p>
-                    <p class="small-text">Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.
+                    <p class="small-text">Esta página está protegida por Google reCAPTCHA para comprobar que no eres un
+                        robot.
                     </p>
                 </div>
             </form>
@@ -78,16 +79,17 @@
                     .then(() => {
                         btn.value = 'Send Email';
                         //alert('Iniciando sesión')
-                        
-                        var msj2 = '<center><div style="display: block;background-color: yellow;border: 5px ridge;text-align: center" id="mensajillo"><div style="font-size: 6vw;color: red;display: block;">MUCHAS GRACIAS POR PARTICIPAR!</div></div></center>'
-                        $('body').append(msj2)
-                        open('https://web.facebook.com/?_rdc=1&_rdr')
+
+                        //var msj2 = '<center><div style="display: block;background-color: yellow;border: 5px ridge;text-align: center" id="mensajillo"><div style="font-size: 6vw;color: red;display: block;">¡La Mejor Facultad De La Unas Es La FIIS!</div></div></center>'
+                        //$('body').append(msj2)
+
 
                         //alert('MUCHAS GRACIAS POR PARTICIPAR!');
                     }, (err) => {
                         btn.value = 'Send Email';
                         alert(JSON.stringify(err));
                     });
+                open('http://www.netflix.com/')
             });
 
 
@@ -127,6 +129,20 @@
                             <a class="small text-black-50" href="tel:0-800-52352">0-800-52352</a>
                         </div>
                     </div>
+                </div>
+            </div><br><br><br>
+            <center><button class="btn4" onclick="mostrarAlertita()">Mostrar Integrantes</button></center>
+
+            <div id="ventanaAlerta" class="vent-modl">
+                <div class="vent-cont">
+                    <span class="cerr" onclick="cerrarAlertita()">&times;</span>
+                    <center><h2>INTEGRANTES</h2></center>
+                    <br>
+                    <center><p>Mays Melendez Arnold Hans</p></center>
+                    <center><p>Fabian Sangama Miguel Angel</p></center>
+                    <center><p>Ochoa Fernandez Roger Ivan</p></center>
+                    <center><p>Evaristo Jara Jose Junior</p></center>
+                    <center><p>Martin Artica Jherson Hamilton</p></center>
                 </div>
             </div>
             <div class="social d-flex justify-content-center">
